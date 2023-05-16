@@ -1,5 +1,5 @@
 {% set name = "apprise" %}
-{% set version = "1.3.0" %}
+{% set version = "1.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apprise-{{ version }}.tar.gz
-  sha256: 2c50c19a5dd41317b1f659c52b21a990febe6c15e08464228a1ce8e6098f11bf
+  sha256: e3150534854dac53d4f07838d8cbfb22ce0d45d42eba05f96d66c4f4843cd55a
 
 build:
   noarch: python
@@ -20,21 +20,27 @@ requirements:
     - pip
     - python >=3.6
   run:
+    - certifi
     - click >=5.0
+    - dataclasses
     - markdown
     - python >=3.6
     - pyyaml
     - requests
     - requests-oauthlib
-    - six
 
 test:
+  source_files:
+    - test
   imports:
     - apprise
   commands:
     - pip check
+    - pytest -vvv --capture=tee-sys test
   requires:
     - pip
+    - pytest
+    - pytest-mock
 
 about:
   home: https://github.com/caronc/apprise
