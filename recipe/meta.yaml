@@ -43,7 +43,9 @@ test:
     - pytest-mock
 
 about:
-  home: https://github.com/caronc/apprise
+  home: https://hub.docker.com/r/caronc/apprise
+  dev_url: https://github.com/caronc/apprise
+  doc_url: https://github.com/caronc/apprise/wiki
   summary: Push Notifications that work with just about every platform
   license: MIT
   license_file:
