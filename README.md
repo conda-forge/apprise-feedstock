@@ -3,11 +3,15 @@ About apprise-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/apprise-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/caronc/apprise
+Home: https://hub.docker.com/r/caronc/apprise
 
 Package license: MIT
 
 Summary: Push Notifications that work with just about every platform
+
+Development: https://github.com/caronc/apprise
+
+Documentation: https://github.com/caronc/apprise/wiki
 
 Current build status
 ====================
