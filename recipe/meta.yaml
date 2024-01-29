@@ -1,5 +1,5 @@
 {% set name = "apprise" %}
-{% set version = "1.7.1" %}
+{% set version = "1.7.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apprise-{{ version }}.tar.gz
-  sha256: 8d439d08550470524425dedee4bc8a72766c216c218f3772c37404eb2fd86e5a
+  sha256: 09e159b29008e6c8e93d7ffc3c15d419c0bbae41620405f8f2d3432b72a2e9bf
 
 build:
   noarch: python
