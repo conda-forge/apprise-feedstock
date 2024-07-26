@@ -18,13 +18,13 @@ requirements:
   host:
     - babel
     - pip
-    - python >=3.6
+    - python >=3.7
   run:
+    - python >=3.7
     - certifi
     - click >=5.0
     - dataclasses
     - markdown
-    - python >=3.6
     - pyyaml
     - requests
     - requests-oauthlib
