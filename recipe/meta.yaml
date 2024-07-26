@@ -1,5 +1,5 @@
 {% set name = "apprise" %}
-{% set version = "1.8.0" %}
+{% set version = "1.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apprise-{{ version }}.tar.gz
-  sha256: e8f58cebfea1a34f569cb4c68809a3175be80ec06f0a2ec473522b92023212c5
+  sha256: 08a20fe72672b7e90f7969d5b879d657c2e2db385a8a8c10f54cba565bf237f2
 
 build:
   noarch: python
@@ -18,13 +18,13 @@ requirements:
   host:
     - babel
     - pip
-    - python >=3.6
+    - python >=3.7
   run:
+    - python >=3.7
     - certifi
     - click >=5.0
     - dataclasses
     - markdown
-    - python >=3.6
     - pyyaml
     - requests
     - requests-oauthlib
