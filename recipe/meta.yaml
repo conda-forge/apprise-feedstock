@@ -1,34 +1,35 @@
 {% set name = "apprise" %}
-{% set version = "1.9.0" %}
+{% set version = "1.9.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apprise-{{ version }}.tar.gz
-  sha256: b5c93afd6331afe4b63a55d1cea9076e47becb4ba89b562b181c13e25bb0c7d6
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apprise-{{ version }}.tar.gz
+  sha256: 79ecd02c41d86dffd211bb35cc5c06c846e777041abe1d0701f989980de44689
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
+  entry_points:
+    - apprise = apprise.cli:main
 
 requirements:
   host:
     - babel
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - setuptools
   run:
-    - python >=3.7
-    - certifi
-    - click >=5.0
-    - dataclasses
-    - markdown
-    - pyyaml
+    - python >={{ python_min }}
+    - certifi    
     - requests
     - requests-oauthlib
+    - click >=5.0
+    - markdown
+    - pyyaml
 
 test:
   source_files:
@@ -37,11 +38,13 @@ test:
     - apprise
   commands:
     - pip check
+    - apprise --help
     - pytest -vvv --capture=tee-sys test
   requires:
     - pip
     - pytest
     - pytest-mock
+    - python {{ python_min }}
 
 about:
   home: https://hub.docker.com/r/caronc/apprise
