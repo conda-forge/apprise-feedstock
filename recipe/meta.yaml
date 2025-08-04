@@ -39,7 +39,7 @@ test:
   commands:
     - pip check
     - apprise --help
-    - pytest -vvv --capture=tee-sys test
+    - pytest -vvv --capture=tee-sys tests
   requires:
     - pip
     - pytest
