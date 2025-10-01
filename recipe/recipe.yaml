@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: apprise
-  version: 1.9.4
+  version: "1.9.5"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apprise-${{ version }}.tar.gz
-  sha256: 483122aee19a89a7b075ecd48ef11ae37d79744f7aeb450bcf985a9a6c28c988
+  sha256: 8f3be318bb429c2017470e33928a2e313cbf7600fc74b8184782a37060db366a
 
 build:
   number: 0
@@ -34,6 +34,7 @@ requirements:
     - click >=5.0
     - markdown
     - pyyaml
+    - python-tzdata
 
 tests:
   - python:
