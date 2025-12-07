@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: apprise
-  version: "1.9.5"
+  version: "1.9.6"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apprise-${{ version }}.tar.gz
-  sha256: 8f3be318bb429c2017470e33928a2e313cbf7600fc74b8184782a37060db366a
+  sha256: 4206be9cb5694a3d08dd8e0393bbb9b36212ac3a7769c2633620055e75c6caef
 
 build:
   number: 0
