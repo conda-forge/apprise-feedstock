@@ -25,7 +25,8 @@ requirements:
     - babel
     - pip
     - python ${{ python_min }}.*
-    - setuptools
+    - setuptools >=69
+    - wheel
   run:
     - python >=${{ python_min }}
     - certifi
@@ -41,7 +42,9 @@ tests:
       imports:
         - apprise
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - files:
       source:
         - tests
