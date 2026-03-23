@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: apprise
-  version: "1.9.8"
+  version: "1.9.9"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apprise-${{ version }}.tar.gz
-  sha256: 2e06f9ebad47e67f3f184bb789a7966bec3261a53556c90acb1b1cdb85d84a2c
+  sha256: fd622c0df16bdc79ed385539735573488cafe2405d25747e87eebd6b09b26012
 
 build:
   number: 0
@@ -25,7 +25,8 @@ requirements:
     - babel
     - pip
     - python ${{ python_min }}.*
-    - setuptools
+    - setuptools >=69
+    - wheel
   run:
     - python >=${{ python_min }}
     - certifi
@@ -41,7 +42,9 @@ tests:
       imports:
         - apprise
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - files:
       source:
         - tests
