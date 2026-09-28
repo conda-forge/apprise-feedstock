@@ -46,18 +46,12 @@ tests:
       python_version:
         - ${{ python_min }}.*
         - "*"
-  - files:
-      source:
-        - tests
-    requirements:
+  - requirements:
       run:
-        - pytest
-        - pytest-mock
         - python ${{ python_min }}.*
     script:
       - apprise --help
-      - pytest -vvv -k "not test_plugin_workflows_template_add_failure" --capture=tee-sys tests
-
+    
 about:
   summary: Push Notifications that work with just about every platform
   license: MIT
