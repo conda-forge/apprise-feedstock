@@ -29,12 +29,13 @@ requirements:
     - wheel
   run:
     - python >=${{ python_min }}
-    - certifi
     - requests
+    - urllib3
     - requests-oauthlib
     - click >=5.0
     - markdown
     - pyyaml
+    - certifi
     - python-tzdata
 
 tests:
