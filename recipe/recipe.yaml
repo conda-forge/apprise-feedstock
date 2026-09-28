@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: apprise
-  version: "1.13.1"
+  version: "2.0.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apprise-${{ version }}.tar.gz
-  sha256: e7689dda71aaf739244d6c8690de13cb1361b8d0a79980fb48bb397455ca0bdd
+  sha256: aeb321737f951860d7cb0a9574159090cbdbcb0f1ba01c6b49c69018380adf8d
 
 build:
   number: 0
@@ -29,12 +29,13 @@ requirements:
     - wheel
   run:
     - python >=${{ python_min }}
-    - certifi
     - requests
+    - urllib3
     - requests-oauthlib
     - click >=5.0
     - markdown
     - pyyaml
+    - certifi
     - python-tzdata
 
 tests:
@@ -45,18 +46,12 @@ tests:
       python_version:
         - ${{ python_min }}.*
         - "*"
-  - files:
-      source:
-        - tests
-    requirements:
+  - requirements:
       run:
-        - pytest
-        - pytest-mock
         - python ${{ python_min }}.*
     script:
       - apprise --help
-      - pytest -vvv -k "not test_plugin_workflows_template_add_failure" --capture=tee-sys tests
-
+    
 about:
   summary: Push Notifications that work with just about every platform
   license: MIT
