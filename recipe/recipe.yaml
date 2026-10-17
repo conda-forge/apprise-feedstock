@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: apprise
-  version: "2.0.0"
+  version: "2.0.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apprise-${{ version }}.tar.gz
-  sha256: aeb321737f951860d7cb0a9574159090cbdbcb0f1ba01c6b49c69018380adf8d
+  sha256: 8cae8ae5877b9cfd1dddffc17ac1e50f780ab6bdf948f95215e2466ef7230565
 
 build:
   number: 0
@@ -51,7 +51,7 @@ tests:
         - python ${{ python_min }}.*
     script:
       - apprise --help
-    
+
 about:
   summary: Push Notifications that work with just about every platform
   license: MIT
